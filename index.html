@@ -4,14 +4,43 @@
   <meta charset="UTF-8">
   <title>Связаться с нами</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
-    button { padding: 15px 30px; font-size: 20px; cursor: pointer; }
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      margin-top: 80px; 
+      background-color: #f4f6f9;
+    }
+    h1 { margin-bottom: 30px; }
+    button { 
+      padding: 15px 30px; 
+      font-size: 18px; 
+      cursor: pointer; 
+      background-color: #0088cc; 
+      color: white; 
+      border: none; 
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #0077b6;
+    }
+    .qr {
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+
   <h1>Свяжитесь с нами в Telegram</h1>
+
   <button onclick="window.location.href='https://t.me/simona0000';">
     Написать в Telegram
   </button>
+
+  <div class="qr">
+    <h2>Или отсканируйте QR-код:</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://t.me/simona0000" 
+         alt="QR код Telegram">
+  </div>
+
 </body>
 </html>
