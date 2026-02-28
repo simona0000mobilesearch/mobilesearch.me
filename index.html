@@ -1,86 +1,164 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Связаться с нами</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      text-align: center; 
-      margin: 0;
-      padding: 40px 20px;
-      background-color: #f4f6f9;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
 
-    h1 {
-      margin-bottom: 40px;
-    }
+<style>
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #111;
+  --accent: #0088cc;
+}
 
-    .section {
-      margin-bottom: 60px;
-    }
+body.dark {
+  --bg: #0f1115;
+  --card: #1a1d24;
+  --text: #f1f1f1;
+  --accent: #3aa6ff;
+}
 
-    button { 
-      padding: 12px 25px; 
-      font-size: 16px; 
-      cursor: pointer; 
-      background-color: #0088cc; 
-      color: white; 
-      border: none; 
-      border-radius: 8px;
-      margin-top: 15px;
-    }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-    img {
-      margin-top: 20px;
-      border-radius: 12px;
-    }
+.logo {
+  width: 140px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-    .threema { background-color: #3fe669; color: black; }
-    .session { background-color: #6f42c1; }
+h1 {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
 
-  </style>
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.qr {
+  margin-top: 20px;
+  width: 180px;
+  border-radius: 12px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Свяжитесь с нами</h1>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
 
-  <!-- Telegram -->
-  <div class="section">
-    <h2>Telegram</h2>
-    <button onclick="window.location.href='https://t.me/simona0000';">
-      Написать в Telegram
-    </button>
-    <br>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://t.me/simona0000" 
-         alt="QR Telegram">
-  </div>
+<div class="container">
 
-  <!-- Threema -->
-  <div class="section">
-    <h2>Threema</h2>
-    <button class="threema" onclick="window.location.href='https://threema.id/CK3V9UWX';">
-      Открыть Threema
-    </button>
-    <br>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://threema.id/CK3V9UWX" 
-         alt="QR Threema">
-  </div>
+<img src="https://i.ibb.co/9k2crH80/photo-2025-12-15-19-42-56.jpg" class="logo">
 
-  <!-- Session -->
-  <div class="section">
-    <h2>Session</h2>
-    <button class="session" onclick="navigator.clipboard.writeText('055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b'); alert('Session ID скопирован');">
-      Скопировать Session ID
-    </button>
-    <br>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b" 
-         alt="QR Session">
-  </div>
+<h1>Связаться с нами</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>Telegram</h2>
+<button onclick="window.location.href='https://t.me/simona0000'">
+Открыть Telegram
+</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/simona0000">
+</div>
+
+<div class="card">
+<h2>Threema</h2>
+<button onclick="window.location.href='https://threema.id/CK3V9UWX'">
+Открыть Threema
+</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://threema.id/CK3V9UWX">
+</div>
+
+<div class="card">
+<h2>Session</h2>
+<button onclick="navigator.clipboard.writeText('055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b'); alert('Session ID скопирован');">
+Скопировать ID
+</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=055ba25286712853d2a289d8d6b58befeed18db0fe7d28b55cb4d5f2660e1aa53b">
+</div>
+
+</div>
+
+<div class="footer">
+mobilesearch.me
+</div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
